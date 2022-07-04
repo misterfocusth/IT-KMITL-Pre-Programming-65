@@ -4,9 +4,11 @@
 def main():
     """Suffer Card"""
     card_deck = ["A", "B", "C"]
+    new_deck = ["A", "B", "C"]
     suffer_idx = int(input())
-    result = suffer_idx % 3
-    print(card_deck[result])
+    new_deck[((suffer_idx - 1) % 10 // 1)] = card_deck[(suffer_idx // 10) - 1]
+    new_deck[(suffer_idx // 10) - 1] = card_deck[((suffer_idx - 1) % 10 // 1)]
+    print(new_deck[1])
 
 
 main()
